@@ -11,3 +11,4 @@
 	* 08 : Server-side data-validation added, (empty strings, csrf protection and double data entry)
 	* 09 : bootstrap design xD
 	* 10 : added pre-requisite folder. A MongoDB PHP driver is saved ( >= PHP 5.4.* VC9)
+	* 11 : login is already working

@@ -28,14 +28,22 @@
 			</div>
 			<div class="span6">
 				<h3> Login</h3>
-					<input type="text" name="username" class="span12" placeholder="Username"/>
-					<input type="text" name="password" class="span12" placeholder="Password"/>
-					<ul class="inline pull-left">
-						<li><a href="/forgot">Forgot Password? </a></li>
-					</ul>
-					<div class="pull-right">
-						<button class="btn btn-success" type="submit">Login</button>
-					</div>
+					@if(Session::get('login-error'))
+						<div class="alert alert-error">
+							<i class="icon-exclamation-sign">&nbsp;</i>&nbsp;{{Session::get('login-error')}}
+						</div>
+					@endif
+					<form action="{{ URL::to('/login') }}" method="POST"> 
+						{{ Form::token() }}
+						<input type="text" name="username" class="span12" placeholder="Username"/>
+						<input type="password" name="password" class="span12" placeholder="Password"/>
+						<ul class="inline pull-left">
+							<li><a href="/forgot">Forgot Password? </a></li>
+						</ul>
+						<div class="pull-right">
+							<button class="btn btn-success" type="submit">Login</button>
+						</div>
+					</form>
 			</div>
 		</div>
 	</div>

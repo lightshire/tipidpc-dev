@@ -30,6 +30,38 @@ class HomeController extends BaseController {
 													'title'		=>	'TipidPC | Register'));
 	}
 
+
+	public function postLogin(){
+		/*Validation first
+		-------------------------------------*/
+		$rules = array(
+				'username'	=>	'required',
+				'password'	=>	'required'
+		);
+		$validator = Validator::make(Input::all(), $rules);
+		if($validator->fails()){
+			return Redirect::to('/register')->with('login-error','Please complete all fields.');
+		}
+
+		/*	Protect CRSF
+		-------------------------------------*/
+		if(Session::token() != e(Input::get('_token'))){
+			return Redirect::to('/register')->with('login-error','Please check if you are able to update your sessions. Please clear all cache.');
+		}
+
+		/*	Create Mongo User Collenctions Instance
+		---------------------------------------------*/
+		$userConn 	= 	Users::instance();
+		$user 		= 	$userConn->where('username',e(Input::get('username')))->first();
+
+		if(Hash::check(e(Input::get('password')), $user['password'])){
+			return Redirect::to('/dashboard');
+		}else{
+			return Redirect::to('/register')->with('login-error', 'Username / Password combination has not been found.');
+		}
+
+	}
+
 	public function postRegister(){
 		/*	Validation first 
 		------------------------------------*/
