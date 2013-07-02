@@ -15,12 +15,23 @@
 				<form action="{{ URL::to('register') }}" method="POST">
 					{{ Form::token() }}
 					<h3> Register Now</h3>
+						<div class="row-fluid span12">
+							<a class="btn btn-primary btn-mini" href="{{ URL::to('auth/facebook/register') }}">Connect w/ Facebook</a>
+						</div>
 						<input type="text" name="email" class="span12" placeholder="Email Address" value="{{ Session::get('fb_user') ? Session::get('fb_user')['email'] : '' }}"/>
 						<input type="text" name="username" class="span12" placeholder="Username" value="{{ Session::get('fb_user') ? Session::get('fb_user')['username'] : '' }}"/>
 					<div class="row-fluid span12" style="margin-left:0px;">
 						<input type="password" name="password" class="span6" style="margin" placeholder="Password" />
 						<input type="password" name="password2" class="span6 pull-right" placeholder="Repeat Password" />
 					</div>
+					<!--hidden basic fields (s)-->
+					<input type="hidden" name="first_name" value="{{ Session::get('fb_user') ? Session::get('fb_user')['first_name'] : '' }}"/>
+					<input type="hidden" name="middle_name" 	/>
+					<input type="hidden" name="last_name"		 value="{{ Session::get('fb_user') ? Session::get('fb_user')['last_name'] : '' }}"/>
+					<input type="hidden" name="location"	value="{{ Session::get('fb_user') ? Session::get('fb_user')["location"]["name"] : '' }}"	/>
+					<input type="hidden" name="contact_number"  />
+					<input type="hidden" name="facebook_id"	value="{{ Session::get('fb_user') ? Session::get('fb_user')["id"] : '' }}"	/>
+					<!--hidden basic fields (e) -->
 					<div class="button-group pull-right">
 						<button class="btn btn-success" type="submit">Register</button>
 					</div>

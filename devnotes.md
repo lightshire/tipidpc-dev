@@ -5,7 +5,8 @@
 	* 02 : eden library is in /app/eden/eden.php (single file only)
 	* 03 : FacebookAuthController.php has been added there will be /auth/facebook/register and /auth/facebook/login
 	* 04 : /app/library/Facebook.php has been added  - merged eden w/ laravel inside the php file
-	
+	* 05 : fixed register.blade.php
+
 * 2nd, July 2013
 	* 01 : Added UserCP routes
 	* 02 : Added Mongo-Auth in laravel routes

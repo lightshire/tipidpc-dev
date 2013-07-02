@@ -94,9 +94,15 @@ class HomeController extends BaseController {
 			return Redirect::to('/register')->with('error','The username and / or the password has already been used. ');
 		}else{
 			$id = $userConn->insert(array(
-					'username' 	=>	e(Input::get('username')),
-					'password'	=>  Hash::make( e(Input::get('password')) ),
-					'email' 	=>	e(Input::get('email'))
+					'username' 		=>	e(Input::get('username')),
+					'password'		=>  Hash::make( e(Input::get('password')) ),
+					'email' 		=>	e(Input::get('email')),
+					'first_name'	=>	e(Input::get('first_name')),
+					'middle_name'	=>	e(Input::get('middle_name')),
+					'last_name'		=>	e(Input::get('last_name')),
+					'facebook_id'	=>	e(Input::get('facebook_id')),
+					'location'		=>	e(Input::get('location')),
+					'contact_number'=>	e(Input::get('contact_number'))
 				));
 			if($id != null){
 				return Redirect::to('/register')->with('success', 'Thank you for Registering! You may now login using the credentials you gave in.');
