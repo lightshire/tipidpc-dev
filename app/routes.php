@@ -14,3 +14,19 @@
 Route::get('/register'	,	'HomeController@getRegister');
 Route::post('/register'	,	'HomeController@postRegister');
 Route::post('/login'	, 	'HomeController@postLogin');
+
+Route::controller('forum','ForumController');
+
+
+/*	Route Auth Fix
+----------------------------------*/
+Route::group(array('before'=>'mongo-auth'),function(){
+	Route::controller('usercp','UserPanelController');
+});
+
+
+/*	REST API Controller Groups
+---------------------------------*/
+Route::group(array('prefix'=>'api'),function(){
+
+});

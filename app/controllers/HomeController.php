@@ -55,7 +55,8 @@ class HomeController extends BaseController {
 		$user 		= 	$userConn->where('username',e(Input::get('username')))->first();
 
 		if(Hash::check(e(Input::get('password')), $user['password'])){
-			return Redirect::to('/dashboard');
+			Session::put('user', $user['username']);	
+			return Redirect::to('/forum');
 		}else{
 			return Redirect::to('/register')->with('login-error', 'Username / Password combination has not been found.');
 		}

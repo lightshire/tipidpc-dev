@@ -1,5 +1,10 @@
 # Development Notes
-
+* 2nd, July 2013
+	* 01 : Added UserCP routes
+	* 02 : Added Mongo-Auth in laravel routes
+	* 03 : Added a simple function in 'Users.php' in app/models
+	* 04 : Added app/library/ in autoloaded functions in composer.json
+	
 * 1st, July 2013
 	* 01 : Added mongodb to composer.json
 	* 02 : Created 'MCollection.php'

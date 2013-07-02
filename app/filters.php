@@ -38,7 +38,21 @@ Route::filter('auth', function()
 	if (Auth::guest()) return Redirect::guest('login');
 });
 
-
+/* Custom Made Mongo Auth
+	--------------------------
+	Should be changed TODO
+------------------------------*/
+Route::filter('mongo-auth',function(){
+	if(!Session::get('user')){ // check if user is logged
+		return Redirect::to('/register');
+	}else{
+		$userConn 	= Users::instance();
+		$user 	  	= Session::get('user');
+		if($userConn->where('username',$user)->count() == 0){
+			return Redirect::to('/register');
+		}
+	}	
+});
 Route::filter('auth.basic', function()
 {
 	return Auth::basic();
