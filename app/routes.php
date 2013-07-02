@@ -24,6 +24,12 @@ Route::group(array('before'=>'mongo-auth'),function(){
 	Route::controller('usercp','UserPanelController');
 });
 
+/*	auth Routes
+----------------------------------*/
+Route::group(array('prefix'=>'auth'),function(){
+	Route::controller('facebook','FacebookAuthController');
+});
+
 
 /*	REST API Controller Groups
 ---------------------------------*/
