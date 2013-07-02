@@ -1,10 +1,16 @@
 # Development Notes
+
+* 3rd, July 2013
+	* 01 : Added Facebook Auth w/ eden library
+	* 02 : eden library is in /app/eden/eden.php (single file only)
+	* 03 : FacebookAuthController.php has been added there will be /auth/facebook/register and /auth/facebook/login
+	* 04 : /app/library/Facebook.php has been added  - merged eden w/ laravel inside the php file
+	
 * 2nd, July 2013
 	* 01 : Added UserCP routes
 	* 02 : Added Mongo-Auth in laravel routes
 	* 03 : Added a simple function in 'Users.php' in app/models
 	* 04 : Added app/library/ in autoloaded functions in composer.json
-	
 * 1st, July 2013
 	* 01 : Added mongodb to composer.json
 	* 02 : Created 'MCollection.php'
