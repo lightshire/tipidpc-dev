@@ -18,12 +18,12 @@
 			</ul>
 				
 					<ul class="nav pull-right">
-						@if(!Session::get('user'))
+						@if(!Auth::user())
 							<li><a href="{{ URL::to('register') }}"><i class='icon-user icon-white'>&nbsp;</i>&nbsp;Register / Login</a></li>
 						@else
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-									{{ Users::current()['username'] }}
+									{{ Auth::user()->username }}
 									<b class="caret"></b>
 								</a>
 								<ul class="dropdown-menu">

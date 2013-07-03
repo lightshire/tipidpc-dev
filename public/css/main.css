@@ -12,7 +12,10 @@
 .register-form{
 	margin:20px;
 }
-
+.box-dotted{
+	border:1px dashed #CCC;
+	padding:10px;
+}
 
 
 

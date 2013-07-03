@@ -6,6 +6,10 @@
 	* 03 : FacebookAuthController.php has been added there will be /auth/facebook/register and /auth/facebook/login
 	* 04 : /app/library/Facebook.php has been added  - merged eden w/ laravel inside the php file
 	* 05 : fixed register.blade.php
+	* 06 : Migrated User table from mongodb
+	* 07 : Added UserInfo and UserAccount models
+	* 08 : Added relationships in laravel
+	* 09 : Added /usercp/profile (saving their data is done)
 
 * 2nd, July 2013
 	* 01 : Added UserCP routes

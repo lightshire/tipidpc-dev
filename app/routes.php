@@ -20,7 +20,7 @@ Route::controller('forum','ForumController');
 
 /*	Route Auth Fix
 ----------------------------------*/
-Route::group(array('before'=>'mongo-auth'),function(){
+Route::group(array('before'=>'auth'),function(){
 	Route::controller('usercp','UserPanelController');
 });
 
