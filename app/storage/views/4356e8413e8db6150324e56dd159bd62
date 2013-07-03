@@ -38,7 +38,6 @@
 		<div class="head"><?php echo $head; ?></div>
 		<div class="body"><?php echo $body; ?></div>
 		<div class="foot"><?php echo $foot; ?></div>
-		<script type="text/javascript" src="<?php echo URL::to('/'); ?>/assets/front/script.js"></script>
     </div>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
@@ -47,5 +46,8 @@
     <script src="<?php echo URL::to('/'); ?>/js/jasny-bootstrap.min.js"></script>
     <script src="<?php echo URL::to('/'); ?>/js/plugins.js"></script>
     <script src="<?php echo URL::to('/'); ?>/js/main.js"></script>
+    <script src="<?php echo URL::to('/'); ?>/js/backbone/underscore.js"></script>
+    <script src="<?php echo URL::to('/'); ?>/js/backbone/backbone.js"></script>
+    <script src="<?php echo URL::to('/'); ?>/js/backbone/backbone-mvc.js"></script>
 </body>
 </html>

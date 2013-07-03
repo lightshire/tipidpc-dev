@@ -10,7 +10,7 @@
 	* 07 : Added UserInfo and UserAccount models
 	* 08 : Added relationships in laravel
 	* 09 : Added /usercp/profile (saving their data is done)
-
+	* 10 : Added backbone pre-requisite
 * 2nd, July 2013
 	* 01 : Added UserCP routes
 	* 02 : Added Mongo-Auth in laravel routes
